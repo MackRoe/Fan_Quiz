@@ -55,7 +55,7 @@ def question2():
         print("The correct answer was C (Sunnydale)")
         print('')
         print(question2_trivia)
-
+        rating = 0
     else:
         print("Try Again!")
         response = input("Enter one letter for your answer [A, B, or C]: ")
@@ -81,7 +81,7 @@ def question3():
         print("The correct answer was F (False)")
         print('')
         print(question3_trivia)
-
+        rating = 0
     else:
         print("Try Again!")
         response = input("Enter one letter for your answer [T or F]: ")
@@ -90,19 +90,71 @@ def question3():
 
 
 def question4():
-    pass
+    question4_text = "4. How many Slayers are there?"
+    question4_answers = ['a) one girl in all the world', 'b) two', 'c) at least 1800']
+    question4_trivia = "The mystical 'rules' governing the Calling of Slayers changed in 2003. Willow Rosenberg uses magic to tap into the Slayer's Scythe's essence at Buffy's request, and performs a spell that calls every living Potential Slayer at once, thus ending the legacy of 'one girl in all the world'. \n After taking the time to find and count them, Buffy states that there are at least 1800 Slayers in the world"
+    print(question4_text)
+    print('')
+    for answer in question4_answers:
+        print(answer)
+    print('')
+    # print(question_answers(question_number))
+    response = input("Enter one letter for your answer [A, B, or C]:")
+    print('')
+    print('You answered: ' + str(response))
+    if response.upper() == 'C':
+        print("Your answer is CORRECT")
+        print('')
+        print(question4_trivia)
+        rating = 1
+    elif response.upper() == 'A' or response.upper() == 'B':
+        print("The correct answer was C (at least 1800)")
+        print('')
+        print(question4_trivia)
+        rating = 0
+    else:
+        print("Try Again!")
+        response = input("Enter one letter for your answer [A, B, or C]: ")
+    print("rating: " + str(rating))
+    return rating
 
 
 def question5():
-    pass
+    question5_text = "5. Willow, during her dark phase, was refered to as 'Dark Pheonix'."
+    question5_trivia = "Buffy's plan (in episode: Two to Go), to run away from Evil Willow, doesn't fly with Andrew, who replies, 'Are you kidding? She's like Dark Phoenix up there!' "
+    print(question5_text)
+    print('')
+    response = input("True or False? [T or F]:")
+    print('')
+    print('You answered: ' + str(response))
+    if response.upper() == 'T':
+        print("Your answer is CORRECT")
+        print('')
+        print(question5_trivia)
+        rating = 1
+    elif response.upper() == 'F':
+        print("The correct answer was T (True)")
+        print('')
+        print(question5_trivia)
+        rating = 0
+    else:
+        print("Try Again!")
+        response = input("Enter one letter for your answer [T or F]: ")
+    print("rating: " + str(rating))
+    return rating
+
 
 def calc_rating():
     rating = 0
     if question1() == 1:
         rating += 1
     if question2() == 1:
-        rating+=1
+        rating += 1
     if question3() == 1:
+        rating += 1
+    if question4() == 1:
+        rating += 1
+    if question5() == 1:
         rating += 1
     print("Calculated Rating is: " + str(rating))
     return rating
@@ -128,15 +180,8 @@ def run_quiz():
     print('##################################')
     print('########  Buffy Fan Quiz  ########')
     print('##################################')
-    # print('')
-    # question1()
-    # print('')
-    # question2()
-    # print('')
-    # question3()
-    # print('')
-    fan_rating()
 
+    fan_rating()
 
 
 run_quiz()
