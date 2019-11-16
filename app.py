@@ -29,6 +29,7 @@ def question1():
         print("Try Again!")
         response = input("Enter one letter for your answer [A, B, or C]: ")
     print("rating: " + str(rating))
+    print('')
     return rating
 
 
@@ -60,6 +61,7 @@ def question2():
         print("Try Again!")
         response = input("Enter one letter for your answer [A, B, or C]: ")
     print("rating: " + str(rating))
+    print('')
     return rating
 
 
@@ -86,6 +88,7 @@ def question3():
         print("Try Again!")
         response = input("Enter one letter for your answer [T or F]: ")
     print("rating: " + str(rating))
+    print('')
     return rating
 
 
