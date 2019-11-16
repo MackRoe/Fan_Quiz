@@ -1,5 +1,7 @@
 # fan quiz to run in Terminal
 
+def append_answer_list():
+    pass
 
 def question1():
     rating = 0
@@ -165,16 +167,35 @@ def question5():
 
 def calc_rating():
     rating = 0
+    score_list = []
     if question1() == 1:
         rating += 1
+        score_list.append("Q1: 1")
+    else:
+        score_list.append("Q1: 0")
     if question2() == 1:
         rating += 1
+        score_list.append("Q2: 1")
+    else:
+        score_list.append("Q2: 0")
     if question3() == 1:
         rating += 1
+        score_list.append("Q3: 1")
+    else:
+        score_list.append("Q3: 0")
     if question4() == 1:
         rating += 1
+        score_list.append("Q4: 1")
+    else:
+        score_list.append("Q4: 0")
     if question5() == 1:
         rating += 1
+        score_list.append("Q5: 1")
+    else:
+        score_list.append("Q5: 0")
+    for q_score in score_list:
+        print(q_score)
+    print("")
     print("Calculated Rating is: " + str(rating))
     return rating
 
